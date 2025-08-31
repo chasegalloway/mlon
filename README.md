@@ -69,10 +69,6 @@ cv = CrossValidator(n_splits=5)
 scores = cv.cross_validate(model, X, y)
 ```
 
-## Documentation
-
-For detailed documentation and examples, visit [documentation link].
-
 ## Requirements
 
 - Python 3.7+
