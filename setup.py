@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="mlon",
-    version="1.0.1",
+    version="1.0.3",
     description="A comprehensive utility package for machine learning development",
     long_description=long_description,
     long_description_content_type="text/markdown",
