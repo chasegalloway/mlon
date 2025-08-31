@@ -1,5 +1,5 @@
 # MLON
-
+[![PyPI Downloads](https://static.pepy.tech/badge/mlon)](https://pepy.tech/projects/mlon)
 A comprehensive utility package for machine learning development that works seamlessly with popular ML libraries like TensorFlow, scikit-learn, Keras, and PyTorch.
 
 ## Features
