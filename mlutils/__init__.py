@@ -1,5 +1,5 @@
 """
-MLUtils - A comprehensive utility package for machine learning development
+MLON - A comprehensive utility package for machine learning development
 """
 
 from .preprocessing import DataPreprocessor
