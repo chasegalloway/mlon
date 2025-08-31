@@ -1,3 +1,6 @@
 examples/
 tests/
 *.log
+dist/
+mlon.egg-info/
+.pypirc

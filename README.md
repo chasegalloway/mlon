@@ -1,4 +1,4 @@
-# MLUtils
+# MLON
 
 A comprehensive utility package for machine learning development that works seamlessly with popular ML libraries like TensorFlow, scikit-learn, Keras, and PyTorch.
 
@@ -36,13 +36,13 @@ A comprehensive utility package for machine learning development that works seam
 ## Installation
 
 ```bash
-pip install mlutils
+pip install mlon
 ```
 
 ## Quick Start
 
 ```python
-from mlutils import DataPreprocessor, ModelEvaluator, Visualizer, ModelUtils, CrossValidator
+from mlon import DataPreprocessor, ModelEvaluator, Visualizer, ModelUtils, CrossValidator
 
 # Data Preprocessing
 preprocessor = DataPreprocessor()

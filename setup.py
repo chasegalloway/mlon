@@ -1,12 +1,11 @@
 from setuptools import setup, find_packages
 import os
 
-# Read the README file
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name="mlutils",
+    name="mlon",
     version="1.0.0",
     description="A comprehensive utility package for machine learning development",
     long_description=long_description,
