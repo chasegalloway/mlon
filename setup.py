@@ -6,13 +6,13 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="mlon",
-    version="1.0.3",
+    version="1.0.4",
     description="A comprehensive utility package for machine learning development",
     long_description=long_description,
     long_description_content_type="text/markdown",
     author="Chase Galloway",
     author_email="chase.h.galloway21@gmail.com",
-    url="https://github.com/chasegalloway/mlutils", 
+    url="https://github.com/chasegalloway/mlon", 
     packages=find_packages(),
     install_requires=[
         'numpy>=1.19.0',
