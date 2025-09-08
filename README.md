@@ -1,7 +1,7 @@
 # MLON (Machine Learning Operations Network)
 [![PyPI Downloads](https://static.pepy.tech/badge/mlon)](https://pepy.tech/projects/mlon)
 
-A comprehensive utility package for machine learning development that works seamlessly with popular ML libraries like TensorFlow, scikit-learn, Keras, and PyTorch. MLON provides an interconnected network of operations for streamlined machine learning workflows.
+A comprehensive utility package for machine learning development that works seamlessly with popular ML libraries like TensorFlow, scikit-learn, Keras, and PyTorch. MLON provides an interconnected network of operations for streamlined machine learning workflows, with built-in safety checks for data leakage and bias.
 
 ## Features Overview
 
@@ -134,7 +134,38 @@ ts_utils = TimeSeriesUtils()
   seasonality_period = ts_utils.detect_seasonality(data)
   ```
 
-### 7. Feature Selection (`FeatureSelector`) - NEW!
+### 7. Automatic Guardrails (`LeakageDetector`, `BiasDetector`) - NEW in v1.1.0! 🛡️
+```python
+from mlon.guardrails import LeakageDetector, BiasDetector
+
+# Initialize detectors
+leakage_detector = LeakageDetector()
+bias_detector = BiasDetector()
+```
+- **Data Leakage Detection**
+  ```python
+  # Check for train-test overlap
+  overlap_warnings = leakage_detector.check_train_test_overlap(X_train, X_test)
+  
+  # Detect target leakage in features
+  leakage_warnings = leakage_detector.detect_target_leakage(X, y)
+  
+  # Check for future information leakage in time series
+  future_warnings = leakage_detector.detect_future_leakage(timestamps, features)
+  ```
+- **Bias & Fairness Checks**
+  ```python
+  # Check for dataset bias
+  bias_warnings = bias_detector.check_dataset_bias(data, protected_features=['gender', 'race'])
+  
+  # Calculate disparate impact
+  impact_metrics = bias_detector.calculate_disparate_impact(predictions, protected_feature)
+  
+  # Get group fairness metrics
+  fairness_metrics = bias_detector.calculate_group_fairness_metrics(y_true, y_pred, protected_feature)
+  ```
+
+### 8. Feature Selection (`FeatureSelector`) - NEW!
 ```python
 from mlon import FeatureSelector
 
@@ -168,6 +199,15 @@ pip install mlon
 ```python
 from mlon import DataPreprocessor, ModelEvaluator, Visualizer, ModelUtils, CrossValidator
 
+# Initialize safety checks
+leakage_detector = LeakageDetector()
+bias_detector = BiasDetector()
+
+# Check for data leakage and bias
+overlap_warnings = leakage_detector.check_train_test_overlap(X_train, X_test)
+leakage_warnings = leakage_detector.detect_target_leakage(X, y)
+bias_warnings = bias_detector.check_dataset_bias(data, protected_features=['gender'])
+
 # Data Preprocessing
 preprocessor = DataPreprocessor()
 scaled_data = preprocessor.scale_features(data, method='standard')
@@ -177,6 +217,9 @@ encoded_data = preprocessor.encode_categorical(data, method='onehot')
 evaluator = ModelEvaluator()
 metrics = evaluator.classification_metrics(y_true, y_pred)
 conf_matrix = evaluator.get_confusion_matrix(y_true, y_pred)
+
+# Check model fairness
+fairness_metrics = bias_detector.calculate_group_fairness_metrics(y_true, y_pred, protected_feature)
 
 # Visualization
 viz = Visualizer()
@@ -202,6 +245,7 @@ scores = cv.cross_validate(model, X, y)
 - Matplotlib >= 3.3.0
 - Seaborn >= 0.11.0
 - Joblib >= 1.0.0
+- SciPy >= 1.6.0  # Required for advanced statistical tests in guardrails
 
 ## Contributing
 
