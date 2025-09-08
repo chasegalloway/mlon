@@ -4,3 +4,4 @@ tests/
 dist/
 mlon.egg-info/
 .pypirc
+RELEASE_NOTES.md
