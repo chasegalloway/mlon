@@ -9,5 +9,6 @@ from .model_utils import ModelUtils
 from .cross_validation import CrossValidator
 from .time_series import TimeSeriesUtils
 from .feature_selection import FeatureSelector
+from .guardrails import LeakageDetector, BiasDetector
 
-__version__ = "0.1.0"
+__version__ = "1.1.0"
