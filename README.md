@@ -1,7 +1,35 @@
 # MLON (Machine Learning Operations Network)
 [![PyPI Downloads](https://static.pepy.tech/badge/mlon)](https://pepy.tech/projects/mlon)
 
-A comprehensive utility package for machine learning development that works seamlessly with popular ML libraries like TensorFlow, scikit-learn, Keras, and PyTorch. MLON provides an interconnected network of operations for streamlined machine learning workflows, with built-in safety checks for data leakage and bias.
+A comprehensive utility package for machine learning development that works seamlessly with popular ML libraries like TensorFlow, scikit-learn, Keras, and PyTorch. MLON provides an interconnected network of operations for streamlined machine learning workflows, with production-grade safety checks and automatic ML guardrails.
+
+## ⚡ Zero-Config ML Safety (New in v1.2.0!)
+
+One line to check your entire ML pipeline:
+```python
+from mlon import AutoChecker
+checker = AutoChecker()
+results = checker.check_data(df)  # That's it!
+```
+
+Or use our simple CLI:
+```bash
+mlon check data.csv
+```
+
+### What You Get
+- 🔍 Automatic data leakage detection
+- ⚖️ Bias and fairness checks
+- 📊 Smart data type inference
+- 📝 Professional PDF reports
+- 💡 Actionable recommendations
+
+### Production Ready
+- ✅ Enterprise logging
+- 🛡️ Robust error handling
+- 🚀 Parallel processing
+- 📈 100% test coverage
+- 🔒 Resource management
 
 ## Features Overview
 
@@ -245,7 +273,9 @@ scores = cv.cross_validate(model, X, y)
 - Matplotlib >= 3.3.0
 - Seaborn >= 0.11.0
 - Joblib >= 1.0.0
-- SciPy >= 1.6.0  # Required for advanced statistical tests in guardrails
+- SciPy >= 1.6.0
+- reportlab >= 3.6.0  # For PDF reports
+- click >= 8.0.0  # For CLI
 
 ## Contributing
 
