@@ -9,7 +9,7 @@ One line to check your entire ML pipeline:
 ```python
 from mlon import AutoChecker
 checker = AutoChecker()
-results = checker.check_data(df)  # That's it!
+results = checker.check_data(df)
 ```
 
 Or use our simple CLI:
@@ -18,18 +18,18 @@ mlon check data.csv
 ```
 
 ### What You Get
-- 🔍 Automatic data leakage detection
-- ⚖️ Bias and fairness checks
-- 📊 Smart data type inference
-- 📝 Professional PDF reports
-- 💡 Actionable recommendations
+-  Automatic data leakage detection
+-  Bias and fairness checks
+-  Smart data type inference
+-  Professional PDF reports
+-  Actionable recommendations
 
 ### Production Ready
-- ✅ Enterprise logging
-- 🛡️ Robust error handling
-- 🚀 Parallel processing
-- 📈 100% test coverage
-- 🔒 Resource management
+-  Enterprise logging
+-  Robust error handling
+-  Parallel processing
+-  100% test coverage
+-  Resource management
 
 ## Features Overview
 
