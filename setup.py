@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="mlon",
-    version="1.2.0",
+    version="1.2.1",
     description="A comprehensive utility package for machine learning development",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -31,7 +31,7 @@ setup(
         ],
     },
     classifiers=[
-        "Development Status :: 3 - Alpha",
+        "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
         "Intended Audience :: Science/Research",
         "Programming Language :: Python :: 3",
@@ -44,8 +44,8 @@ setup(
     ],
     python_requires=">=3.7",
     project_urls={
-        "Bug Tracker": "https://github.com/chasegalloway/mlutils/issues",
-        "Documentation": "https://github.com/chasegalloway/mlutils#readme",
-        "Source Code": "https://github.com/chasegalloway/mlutils",
+        "Bug Tracker": "https://github.com/chasegalloway/mlon/issues",
+        "Documentation": "https://github.com/chasegalloway/mlon#readme",
+        "Source Code": "https://github.com/chasegalloway/mlon",
     },
 )
